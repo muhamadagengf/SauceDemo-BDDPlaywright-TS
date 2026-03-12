@@ -1,0 +1,17 @@
+{
+  "name": "playwright-ts-bdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "allure-playwright": "^3.6.0",
+    "playwright-bdd": "^8.4.2"
+  }
+}
