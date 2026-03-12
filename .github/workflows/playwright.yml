@@ -1,11 +1,11 @@
-name: Playwright Sauce Demo
+name: Playwright Sauce Demo BDD
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
   schedule:
-    - cron: '0 13 * * *'
+    - cron: '0 13 * * *' # Running otomatis jam 20:00 WIB
 
 permissions:
   contents: write
@@ -25,11 +25,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        # Best Practice: Pastikan playwright-bdd dan allure ada di package.json
-        # Jika belum yakin, gunakan command di bawah untuk memastikan tool tersedia
         run: |
           npm ci
-          npm install -D playwright-bdd allure-playwright
+          # Di sini kita tetap install dependencies BDD lo
+          npm install -D allure-playwright playwright-bdd
 
       - name: Get Playwright version
         id: playwright-version
@@ -46,11 +45,12 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
 
+      # --- INI PENYESUAIAN UNTUK BDD ---
+      - name: Generate BDD Files
+        run: npx bddgen
+
       - name: Run Playwright tests
-        # Memisahkan bddgen memastikan file test ter-generate sebelum Playwright jalan
-        run: |
-          npx bddgen
-          npx playwright test
+        run: npx playwright test
         continue-on-error: true
 
       - name: Upload Allure Results as Artifact
