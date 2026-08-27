@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4505","Example #1","chromium","2026-08-27","passed","2026-08-27","Login Feature > Login failed with invalid credentials","tests/features/login.feature.spec.js","",""
+"","4522","Example #3","chromium","2026-08-27","passed","2026-08-27","Login Feature > Login failed with invalid credentials","tests/features/login.feature.spec.js","",""
+"","4497","Example #2","chromium","2026-08-27","passed","2026-08-27","Login Feature > Login failed with invalid credentials","tests/features/login.feature.spec.js","",""
+"","4639","Login success with valid credential","chromium","2026-08-27","passed","2026-08-27","Login Feature","tests/features/login.feature.spec.js","",""
+"","15080","User can add 3 products and checkout successfully","chromium","2026-08-27","passed","2026-08-27","Checkout Feature","tests/features/checkout.feature.spec.js","",""
